@@ -17,7 +17,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # for base application
 TEMPLATES_BASE_DIR = os.path.join(BASE_DIR, "base", "templates")
-STATIC_BASE_DIR = os.path.join(BASE_DIR, "base", "templates")
+# STATIC_BASE_DIR = os.path.join(BASE_DIR, "base", "templates")
 
 
 
@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
+    # 'django.contrib.staticfiles',
     'base',
 ]
 
@@ -125,6 +125,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
-STARICFILES_DIRS =[
-    STATIC_BASE_DIR
-]
+# STARICFILES_DIRS =[
+#     STATIC_BASE_DIR
+# ]
