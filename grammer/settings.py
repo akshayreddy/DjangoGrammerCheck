@@ -61,7 +61,7 @@ ROOT_URLCONF = 'grammer.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMPLATES_BASE_DIR,],
+        'DIRS': [TEMPLATES_BASE_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -126,5 +126,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STARICFILES_DIRS =[
-    STATIC_BASE_DIR,
+    STATIC_BASE_DIR
 ]
