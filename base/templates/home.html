@@ -10,6 +10,12 @@
 
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <script type="text/javascript">
+    function myFunction() {
+      document.getElementById("clear").value = " ";
+    }
+
+    </script>
 
     <style media="screen">
     #result{
@@ -26,7 +32,7 @@
   <body style="color:white; background-color:#8ed1d1; font-family: 'Montserrat', sans-serif; ">
     <div class="container" style="text-align:center;">
       <div class="jumbotron bg-dark">
-          <h1>Grammer Check</h1>
+          <h1>Grammar Check</h1>
       </div>
     </div>
 
@@ -34,16 +40,17 @@
     <form method="post">
       {% csrf_token %}
         <div class="row">
-          <div class="col-8">
-              <textarea name="TextArea" rows="8" cols="80">{{value}}</textarea>
-            <br>
-            <button type="submit" name="button" class="btn btn-primary">Check</button>
+          <div class="col-sm-8">
+              <div class="form-group">
+                <textarea id="clear" class="form-control" name="TextArea" rows="8" cols="80" placeholder="Content goes here">{{value}}</textarea>
+              </div>
+            <button type="submit" name="button" class="btn btn-primary">Check</button> <button type="button" class="btn btn-secondary" onclick="myFunction()">Clear</button>
           </div>
           <div class="col-4">
             <ul class="list-group list-group-flush">
               <li class="list-group-item list-group-item-success rounded">Word count: <span id="result">{{wordcount}}</span></li>
               <li class="list-group-item list-group-item-success rounded">Character count: <span id="result">{{charatercount}}</span></li>
-              <li class="list-group-item list-group-item-success rounded">Grammer Score: <span id="result">{{ grammer.score }}%</span></li>
+              <li class="list-group-item list-group-item-success rounded">Grammar Score: <span id="result">{{ grammer.score }}%</span></li>
               <br>
                 {% if grammer.score != 100 %}
                   <li class="list-group-item list-group-item-danger rounded">Potential Errors</li>
@@ -61,12 +68,14 @@
 
 
     <!--Footer-->
-    <footer class="page-footer rounded" style="margin-bottom:10px; margin-top:30px;">
+    <footer class="page-footer rounded" style="margin-bottom:10px; margin-top:45px;">
 
     <div class="jumbotron-fluid bg-dark">
             <small>Akshay Reddy</small>
             <br>
-            <small>Contact me</small>
+            <small><b style="color:orange;">Email:</b></small><small class="font-weight-light"> m.akshaymreddy@gmail.com</small>
+            <br>
+            <a href="https://www.linkedin.com/in/akshaymreddy/" class="badge badge-light" target="_blank">LinkedIn</a>  <a href="https://github.com/akshayreddy" class="badge badge-light" target="_blank">GitHub</a>
     </div>
   </footer>
 <!--/.Footer-->

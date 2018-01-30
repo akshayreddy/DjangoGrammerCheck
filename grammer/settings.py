@@ -24,13 +24,12 @@ TEMPLATES_BASE_DIR = os.path.join(BASE_DIR, "base", "templates")
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = ')+*_@8m%#@u*8&&l8_^ed@_239q#ffl*ren)5060cs8z2#sp93'
+SECRET_KEY = " "
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+#ALLOWED_HOSTS =[]
 ALLOWED_HOSTS = ['ancient-sands-38802.herokuapp.com']
 
 
