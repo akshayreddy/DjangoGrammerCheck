@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <script type="text/javascript">
     function myFunction() {
-      document.getElementById("clear").value = " ";
+      document.getElementById("clear").value = "";
     }
 
     </script>
@@ -45,8 +45,10 @@
                 <textarea id="clear" class="form-control" name="TextArea" rows="8" cols="80" placeholder="Content goes here">{{value}}</textarea>
               </div>
             <button type="submit" name="button" class="btn btn-primary">Check</button> <button type="button" class="btn btn-secondary" onclick="myFunction()">Clear</button>
+            <small>{{grammer.status}}</small>
           </div>
           <div class="col-4">
+            <small>{{status}}</small>
             <ul class="list-group list-group-flush">
               <li class="list-group-item list-group-item-success rounded">Word count: <span id="result">{{wordcount}}</span></li>
               <li class="list-group-item list-group-item-success rounded">Character count: <span id="result">{{charatercount}}</span></li>
