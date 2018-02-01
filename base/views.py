@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from urllib.request import urlopen
 import json, urllib
-from . import forms
+from . import forms, config
 
 # Create your views here.
 
@@ -21,10 +21,9 @@ def home(request):
         return render(request, "home.html", {"value":value, "form":f, "wordcount":len(value.split()),"charatercount": len(value), "grammer":grammer(value)})
 
 def grammer(value):
-    demo_key = "gg45GBEz4h7h8T73"
     value = value.encode('ascii', 'ignore').decode('utf-8')
     value = "+".join(value.split())
-    url = "https://api.textgears.com/check.php?text=" + value + "&key=" + demo_key
+    url = "https://api.textgears.com/check.php?text=" + value + "&key=" + config.demo_key
 
     try:
         response = urlopen(url)
