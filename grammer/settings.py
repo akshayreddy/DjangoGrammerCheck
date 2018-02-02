@@ -30,7 +30,7 @@ SECRET_KEY = " "
 DEBUG = True
 
 #ALLOWED_HOSTS =[]
-ALLOWED_HOSTS = ['ancient-sands-38802.herokuapp.com']
+ALLOWED_HOSTS = ['ancient-sands-38802.herokuapp.com','localhost','127.0.0.1']
 
 
 # Application definition
