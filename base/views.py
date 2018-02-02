@@ -2,6 +2,7 @@ from django.shortcuts import render
 from urllib.request import urlopen
 import json, urllib
 from . import forms
+import requests
 import os
 
 # Create your views here.
@@ -25,15 +26,16 @@ def grammer(value):
     value = value.encode('ascii', 'ignore').decode('utf-8')
     value = "+".join(value.split())
     API_key = os.environ.get("api")
-    print(API_key)
-    url = "https://api.textgears.com/check.php?text=" + value + "&key=" + API_key
+    #url = "https://api.textgears.com/check.php?text=" + value + "&key=" + API_key
 
     try:
-        response = urlopen(url)
-    except urllib.error.HTTPError:
-        print("OK")
+        url = "https://api.textgears.com/check.php"
+        payload = "text={}&key={}".format(value, API_key)
+        headers = {'content-type': "application/x-www-form-urlencoded"}
+        response = requests.request("POST", url, data=payload, headers=headers)
+    except Exception as e:
         return {'score':"100", 'status':"Sorry! too large text. I'll fix this soon"}
-    s = response.read().decode('utf-8')
-    json_obj = json.loads(s)
+
+    json_obj = response.json()
     json_obj["status"] = " "
     return json_obj
